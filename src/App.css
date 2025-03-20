@@ -1,0 +1,401 @@
+@import "tailwindcss";
+:root {
+  --off-white: #000000;
+  --dark-text: #222;
+}
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./wanted.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--off-white);
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+}
+.base{
+  background-color: #000000;
+}
+.portfolio-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFDFA;
+  border-radius: 20px; /* Adjust the value to control the roundness */
+}
+
+
+/* Navbar styles */
+.navbar {
+  padding: 1.5rem 0;
+  font-weight: 100;
+  background-color: transparent;
+}
+
+.navbar-brand {
+  font-weight: 300;
+  color: var(--dark-text);
+  margin-left: 1rem;
+  font-size: 1.25rem;
+
+}
+.projects {
+  font-family: 'CustomFont', sans-serif;
+font-weight: 100; /* Thin weight */
+  font-weight: 1; /* Medium weight for emphasis */
+  font-size: 3.00rem; /* Adjust size based on your design */
+  color: rgb(255, 255, 255); /* White text color */
+  margin-left: 2.0rem;
+  margin-top: 2.0rem;
+  padding-right: 20px;
+}
+
+.projects_2 {
+  font-family: 'CustomFont', sans-serif;
+font-weight: 100; /* Thin weight */
+  font-weight: 1; /* Medium weight for emphasis */
+  font-size: 3.00rem; /* Adjust size based on your design */
+  color: rgb(0, 0, 0); /* White text color */
+  margin-top: 2.0rem;
+  padding-right: 20px;
+}
+.contact {
+  font-family: 'CustomFont', sans-serif;
+font-weight: 100; /* Thin weight */
+  font-weight: 1; /* Medium weight for emphasis */
+  font-size: 3.00rem; /* Adjust size based on your design */
+  color: rgb(255, 255, 255); /* White text color */
+  margin-top: 2.0rem;
+  margin-left: 1.5rem;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.nav-link {
+  
+  color: black;
+  padding: 0;
+  font-weight: 400;
+  text-decoration: none; /* Remove underline from link */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.nav-link:hover {
+  opacity: 0.4; /* Adjust transparency level (0.7 = 70% opacity) */
+}
+
+/* Hero section */
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-top: 8rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-top: 1rem;
+}
+
+/* Footer section */
+.footer {
+  padding: 0rem 0;
+  margin-top: auto;
+}
+
+.footer-title {
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
+  font-weight: 300;
+}
+
+.contact-link {
+  color: var(--dark-text);
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .footer {
+    padding: 2rem 0;
+  }
+  
+  .footer-title, .footer-subtitle {
+    margin-bottom: 1rem;
+  }
+}
+
+.portfolio-container-2 {
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #FFFDFA;
+  border-radius: 20px; /* Adjust the value to control the roundness */
+}
+
+/* Section Styling */
+.section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(94, 94, 94);
+
+
+}
+
+.section-content{
+  color: rgb(94, 94, 94);
+}
+
+/* Overview Section */
+.overview-text {
+  max-width: 800px;
+  margin: 0; /* Removes any automatic margin */
+  padding: 0; /* Ensures no padding around the element */
+}
+.side{
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview-text h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.overview-text p {
+  font-size: 1rem;
+  margin: 0; /* Remove margin to ensure no space around the paragraph */
+  padding: 0; /* Ensure no extra padding */
+  color: var(--text-secondary);
+  text-align: left; /* Ensure text is aligned to the left */
+}
+
+
+.read-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Services Section */
+.services-grid {
+  display: flex;
+  gap: 4rem;
+}
+
+.services-column {
+  flex: 1;
+}
+
+.services-column p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Recognition Section */
+.recognition-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+.recognition-item {
+  padding: 0.5rem 0;
+}
+
+.award-name {
+  font-weight: 500;
+}
+
+.award-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.award-source {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .recognition-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .overview-text {
+    margin-left: 0;
+  }
+}
+.hover-text-container {
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  width:400px;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  margin-top: 1.0rem;
+}
+
+.hover-text {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 100;  /* Thin weight, you can also use 200, 300, or lighter */
+  font-family: sans-serif;  /* Example using Roboto */
+  color: #ffffff;
+  transition: transform 0.6s ease;
+}
+
+
+.primary-text {
+  transform: translateY(0);
+}
+
+.secondary-text {
+  transform: translateY(30px);
+}
+
+.hover-text-container:hover .primary-text {
+  transform: translateY(-30px);
+}
+
+.hover-text-container:hover .secondary-text {
+  transform: translateY(0);
+}
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 95%;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.heading-small {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* Logo section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.logo {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.starburst {
+  width: 70px;
+  height: 70px;
+}
+
+/* Main title */
+.lets-chat {
+  font-size: 80px;
+  font-weight: 100;
+  color: white;
+}
+
+/* Email */
+.email {
+  font-size: 28px;
+  margin-bottom: 60px;
+  color: white;
+  font-weight: 100;
+}
+
+.number {
+  font-size: 24px;
+  margin-bottom: 60px;
+  color: white;
+  font-weight: 200;
+}
+/* Back icon */
+
+
+/* Site Footer */
+.site-footer {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* Social Links */
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+/* Copyright */
+.copyright {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+}
