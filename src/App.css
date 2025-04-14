@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: 'CustomFont';
-  src: url('./wanted.woff') format('woff');
+  src: url('wanted.woff') format('woff');
   font-weight: 100;
   font-style: normal;
 }
@@ -157,60 +157,99 @@ font-weight: 100; /* Thin weight */
 
 .portfolio-container-2 {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   min-height: 100vh;
   background-color: #FFFDFA;
-  border-radius: 20px; /* Adjust the value to control the roundness */
+  border-radius: 20px;
 }
 
 /* Section Styling */
 .section {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   border-top: 1px solid var(--border-color);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
 }
-
-
 
 .section-title {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: rgb(94, 94, 94);
-
-
 }
 
-.section-content{
+.section-content {
   color: rgb(94, 94, 94);
 }
 
 /* Overview Section */
 .overview-text {
-  max-width: 800px;
-  margin: 0; /* Removes any automatic margin */
-  padding: 0; /* Ensures no padding around the element */
-}
-.side{
-  display: flex;
-  justify-content: space-between;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.overview-text h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+.side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .overview-text p {
-  font-size: 1rem;
-  margin: 0; /* Remove margin to ensure no space around the paragraph */
-  padding: 0; /* Ensure no extra padding */
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
   color: var(--text-secondary);
-  text-align: left; /* Ensure text is aligned to the left */
+  text-align: left;
 }
 
+.projects_2 {
+  font-family: 'CustomFont', sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  margin-top: 1rem;
+  padding-right: 20px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) {
+  .portfolio-container-2 {
+    padding: 2rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    min-width: 120px;
+  }
+
+  .overview-text p {
+    font-size: 1rem;
+  }
+
+  .projects_2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-container-2 {
+    padding: 2rem 4rem;
+  }
+
+  .projects_2 {
+    font-size: 3rem;
+  }
+}
 
 .read-more-btn {
   background: none;
@@ -282,37 +321,58 @@ font-weight: 100; /* Thin weight */
   position: relative;
   overflow: hidden;
   height: 30px;
-  width:400px;
+  width: 400px;
   cursor: pointer;
   margin-left: 0.25rem;
   margin-top: 1.0rem;
+  transition: all 0.3s ease;
+}
+
+.hover-text-container:hover {
+  transform: translateX(5px);
 }
 
 .hover-text {
   position: absolute;
   font-size: 18px;
-  font-weight: 100;  /* Thin weight, you can also use 200, 300, or lighter */
-  font-family: sans-serif;  /* Example using Roboto */
+  font-weight: 100;
+  font-family: sans-serif;
   color: #ffffff;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
-
 
 .primary-text {
   transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .secondary-text {
   transform: translateY(30px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .hover-text-container:hover .primary-text {
   transform: translateY(-30px);
+  opacity: 0;
 }
 
 .hover-text-container:hover .secondary-text {
   transform: translateY(0);
+  opacity: 1;
 }
+
+/* Card hover effects */
+.display-flex {
+  transition: transform 0.3s ease;
+}
+
+.display-flex:hover {
+  transform: translateY(-5px);
+}
+
 .content {
   flex: 1;
   display: flex;

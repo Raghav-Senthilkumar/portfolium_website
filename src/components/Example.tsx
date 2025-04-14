@@ -11,16 +11,14 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  // Create a scroll-based transform for the horizontal movement of both the cards and the h1
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-94%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]); // Apply transparency
+  const opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-black">
       <div className="sticky top-0 flex h-[90vh] items-center overflow-hidden">
-        {/* Apply both horizontal scroll transform and opacity transform to the <h1> */}
         <motion.h1
-          style={{ opacity }} // Apply opacity along with x-transform
+          style={{ opacity }}
           className="projects text-6xl font-bold text-white"
         >
           Projects
@@ -37,25 +35,27 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ card }: { card: CardType }) => {
   return (
-    <div className="display-flex">
-      <div
-        key={card.id}
-        className="group relative h-[450px] w-[600px] overflow-hidden bg-black rounded-2xl"
-      >
-        <img
-          src={card.url}
-          className="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-      </div>
+    <div className="display-flex group">
       <a
-        href={card.link} // Use the card's link for the clickable title
-        target="_blank" // Opens the link in a new tab
-        rel="noopener noreferrer" // Security feature
-        className="no-underline" // Remove underline
+        href={card.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="no-underline"
       >
-        <div className="hover-text-container">
-          <div className="hover-text primary-text">{card.title}</div>
-          <div className="hover-text secondary-text">Check Out ↗</div>
+        <div
+          key={card.id}
+          className="relative h-[250px] w-[300px] sm:h-[300px] sm:w-[400px] md:h-[350px] md:w-[500px] overflow-hidden bg-black rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl"
+        >
+          <img
+            src={card.url}
+            alt={card.title}
+            className="absolute inset-0 z-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-75"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute bottom-0 left-0 p-4 sm:p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <h3 className="text-white text-xl sm:text-2xl font-bold mb-1 sm:mb-2 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">{card.title}</h3>
+            <p className="text-white/80 text-xs sm:text-sm [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">View Project ↗</p>
+          </div>
         </div>
       </a>
     </div>

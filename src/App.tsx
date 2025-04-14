@@ -17,7 +17,7 @@ function Section({ title, content }: SectionProps) {
       <div className="section-header">
         <h3 className="section-title">↳ {title}</h3>
       </div>
-      <div className="section-content">{content}</div>
+      <div className="section-content w-full">{content}</div>
     </section>
   );
 }
@@ -45,7 +45,7 @@ function App() {
           <h1 className="projects_2">Info</h1>
           <StarIcon />
         </div>
-        <hr />
+        <hr className="my-4" />
         <Section
           title="Overview"
           content={
@@ -73,7 +73,7 @@ function App() {
             </div>
           }
         />
-        <hr />
+        <hr className="my-4" />
         <Section
           title="Skills"
           content={
@@ -99,14 +99,14 @@ function App() {
             </div>
           }
         />
-        <hr />
+        <hr className="my-4" />
         <Section
           title="Education"
           content={
             <div className="overview-content">
               <div className="overview-text">
                 <p>
-                  Currently pursuing a Bachelor’s in Computer Science at the{" "}
+                  Currently pursuing a Bachelor's in Computer Science at the{" "}
                   <strong>University of Maryland</strong>, with a Minor in
                   Economics, I have maintained a GPA of 3.92. Expected to
                   graduate in May 2027, my academic focus includes topics like{" "}
